@@ -1,5 +1,5 @@
 <template>
-   <article class="intro-group title">
+   <article id="intro" class="intro-group title">
       <h1>Hi, I am Pedro</h1>
       <h3>An Aspiring Front-End Developer</h3>
       <span>

@@ -1,6 +1,10 @@
 <template>
+<!-- #527A7A -->
    <main>
       <IntroComp />
+      <figure class="code-img">
+         <img src="../assets/img/bg-code.jpg" alt="">
+      </figure>
       <article class="project-title title">
          <h2>My Projects</h2>
          <p>Search by title or filter by category</p>
@@ -22,16 +26,20 @@
                <a href="https://pedroportfolio.netlify.app/" target="_blank">View Project</a>
             </figcaption>
          </figure> 
-         <figure>
-            <img src="" alt="">
+         <figure class="project-card">
+            <img src="../assets/img/portfolio-books.jpg" alt="">
             <figcaption>
-
+               <h3></h3>
+               <h4>Website</h4>
+               <a href="https://pedroportfolio.netlify.app/" target="_blank">View Project</a>
             </figcaption>
          </figure>
-         <figure>
-            <img src="" alt="">
+         <figure class="project-card">
+            <img src="../assets/img/portfolio-books.jpg" alt="">
             <figcaption>
-
+               <h3></h3>
+               <h4>Website</h4>
+               <a href="https://pedroportfolio.netlify.app/" target="_blank">View Project</a>
             </figcaption>
          </figure>
       </section>
