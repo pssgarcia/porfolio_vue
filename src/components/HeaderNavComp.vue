@@ -9,7 +9,7 @@
       <nav>
          <details class="hamburger-menu">
             <summary class="fa-solid fa-bars"></summary>
-            <ul>
+            <ul class="hamburger-list">
                <li>
                   <router-link to="/">Home</router-link>
                </li>

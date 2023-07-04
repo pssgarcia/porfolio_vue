@@ -4,22 +4,22 @@
          <h2>Follow me</h2>
          <ul>
             <li>
-               <a href="">
+               <a href="https://github.com/pssgarcia" target="_blank">
                   <i class="fa-brands fa-github"></i>
                </a>
             </li>
             <li>
-               <a href="">
-                  <i class="fa-brands fa-instagram"></i>
-               </a>
-            </li>
-            <li>
-               <a href="">
+               <a href="https://www.linkedin.com/in/pedro-soares-b996a5263/" target="_blank">
                   <i class="fa-brands fa-linkedin-in"></i>
                </a>
             </li>
             <li>
-               <a href="">
+               <a href="https://www.instagram.com/pedrossgarcia/" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+               </a>
+            </li>
+            <li>
+               <a href="https://twitter.com/pedrossgarcia_" target="_blank">
                   <i class="fa-brands fa-twitter"></i>
                </a>
             </li>

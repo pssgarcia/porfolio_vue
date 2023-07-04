@@ -4,12 +4,21 @@
          <img src="../assets/img/my-pic.jpg" alt="my-pic">
          <figcaption>
             <p>
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium id officiis pariatur reiciendis assumenda error dolorem dicta quasi laborum asperiores eligendi voluptates sunt reprehenderit recusandae, corrupti nisi dolores in at nostrum molestias qui cupiditate fugit? Accusamus aut dolorem nulla. Facere, mollitia harum. Maxime veritatis cum cumque libero excepturi impedit, laboriosam magnam ex? Consequatur aperiam molestiae rerum, sapiente minus inventore minima! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius cumque delectus excepturi neque? Voluptatum minus ad ab, expedita quas numquam!
+               My name is Pedro Soares, I am an aspiring front-end developer. Recently graduated from Tamwood College, I have a passion for web development and love to create responsive websites and applications. 
+            </p>
+            <p>
+               I feel comfortable working with JavaScript, Vue, React, jQuery, PHP, MySQL, MongoDb, HTML, CSS & SASS and a bit of Node.js but I'm always looking forward to learn new technologies and improve my skills.
+            </p>
+            <p>
+               Aside from work, I'm a big fan of football, music and gym. Also, I'm a very easy going person and I love to meet new people and make new friends. 
+            </p>
+            <p>
+               Additionally, I'm a fast learner and I'm always seeking new challenges and opportunities to grow as a developer. I am currently looking for a job opportunity that will allow me to apply my skills and knowledge as a developer.
             </p>
          </figcaption>
       </figure>
       <article class="language-group">
-         <h2>Some of the languages I've been working with lately</h2>
+         <h2>Some of the technologies I've been working with lately</h2>
          <aside>
             <span class="span-icon">
                <i class="fa-brands fa-vuejs" style="color: #3f90ab;"></i>
