@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
   --fontFamily: "Work Sans", sans-serif;
-  --darkGray: #314949;
+  --darkGray: #0D2438;
   --lightGray: #527A7A;
   --cyan: #0EB1D2;
   --lightCyan: #34E4EA;
@@ -36,7 +36,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 5vh;
+  row-gap: 7vh;
+  padding-bottom: 5vh;
 }
 
 .title {
@@ -49,6 +50,12 @@ p {
   color: var(--azure);
   line-height: 1.6;
   letter-spacing: 1px;
+}
+
+#intro,
+#about,
+#contact {
+  padding-top: 9%;
 }
 
 @media (min-width: 200px) {
@@ -84,6 +91,7 @@ p {
     font-weight: 800;
   }
   nav {
+    width: 100%;
     position: relative;
   }
   nav > ul {
@@ -92,6 +100,7 @@ p {
   nav > .hamburger-menu {
     color: whitesmoke;
     position: relative;
+    text-align: right;
     width: 100%;
   }
   nav > .hamburger-menu > summary {
@@ -99,16 +108,33 @@ p {
     cursor: pointer;
     font-size: 25px;
   }
-  nav > .hamburger-menu > ul {
+  .hamburger-list {
     position: absolute;
     display: flex;
     flex-direction: column;
+    row-gap: 2vh;
+    align-items: flex-end;
     width: 100%;
+    background-color: var(--lightGray);
+    margin-top: 23px;
+  }
+  .hamburger-list > li {
+    border-bottom: 1px solid var(--azure);
+    padding: 3.1vh;
+    width: 81%;
+  }
+  .hamburger-list > li > a {
+    color: var(--azure);
+    font-size: 22px;
+    padding: 1vh;
+  }
+  .code-img > img {
+    border-radius: 10px;
+    width: 100%;
+    height: 65vh;
   }
   .intro-group {
     row-gap: 2vh;
-    padding-top: 9%;
-    padding-bottom: 50vh;
   }
   .intro-group > h1 {
     font-size: 30px;
@@ -131,10 +157,10 @@ p {
     border: 1px solid var(--azure);
     padding: 1.6vh;
     width: 32%;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1rem;
     border-radius: 8px;
-    color: var(--azure);
+    color: var(--darkGray);
     background-color: var(--cyan);
   }
   .project-title {
@@ -178,17 +204,16 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 3vh;
+    row-gap: 7vh;
   }
   .project-card {
     display: flex;
-    width: 90%;
     flex-direction: column;
     row-gap: 1vh;
     align-items: center;
     border-radius: 17px;
     width: 92%;
-    background-color: var(--cyan);
+    background-color: var(--lightCyan);
   }
   .project-card > img {
     width: 100%;
@@ -204,17 +229,19 @@ p {
   }
   .project-card > figcaption > h3 {
     color: var(--darkGray);
-    font-weight: 800;
+    text-shadow: 2px 1px var(--azure);
+    font-weight: 600;
   }
   .project-card > figcaption > h4 {
-    color: var(--azure);
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 0;
-    font-weight: 400;
-  }
-  .project-card > figcaption > a {
     color: var(--darkGray);
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  .project-card > figcaption > aside > a {
+    color: var(--darkGray);
+    text-shadow: 1px 1px var(--azure);
     font-weight: 700;
+    letter-spacing: 1px;
   }
   #about {
     row-gap: 7vh;
@@ -224,12 +251,16 @@ p {
     flex-direction: column;
     row-gap: 4vh;
     width: 92%;
-    padding-top: 9%;
   }
   .about-figure > img {
     border-radius: 10px;
     width: 100%;
     height: 50vh;
+  }
+  .about-figure > figcaption {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
   }
   .language-group {
     display: flex;
@@ -315,12 +346,109 @@ p {
     font-weight: 700;
   }
   .back-to-top {
-    display: flex;
-    justify-content: center;
     border: 1px solid var(--cyan);
-    border-radius: 10px;
+    background-color: var(--lightCyan);
+    color: var(--darkGray);
+    border-radius: 50%;
   }
   .back-to-top > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 25px;
+    height: 5vh;
+    width: 5vh;
+  }
+  #contact {
+    row-gap: 4vh;
+    width: 100%;
+  }
+  #contact > h2 {
+    font-size: 27px;
+    width: 88%;
+  }
+  #contact > ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4vh;
+    width: 88%;
+    padding-bottom: 8%;
+  }
+  .icon-detail > address {
+    display: flex;
+    -moz-column-gap: 2.5vh;
+         column-gap: 2.5vh;
+    color: var(--azure);
+    font-size: 18px;
+  }
+  .icon-detail > a {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 2.5vh;
+         column-gap: 2.5vh;
+    color: var(--azure);
+    font-size: 18px;
+  }
+  .contact-icon {
+    font-size: 20px;
+    color: var(--lightCyan);
+  }
+  .contact-form {
+    background-color: var(--azure);
+    border-radius: 10px;
+    padding: 5%;
+    width: 78%;
+    row-gap: 4vh;
+  }
+  .contact-form > h3 {
+    color: var(--darkGray);
+    font-weight: 700;
+    font-size: 28px;
+  }
+  .contact-form > label {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+    color: var(--darkGray);
+    font-weight: 700;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  .contact-form > label > input {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--darkGray);
+    padding: 2.5vh;
+  }
+  .contact-form > label > textarea {
+    height: 20vh;
+    border: none;
+    background-color: var(--darkGray);
+    padding: 2.5vh;
+    border-radius: 5px;
+  }
+  .contact-form > label > textarea::-moz-placeholder {
+    color: var(--lightGray);
+  }
+  .contact-form > label > textarea::placeholder {
+    color: var(--lightGray);
+  }
+  .submit-button {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .submit-button > input {
+    border-radius: 5px;
+    width: 40%;
+    border: none;
+    font-size: 20px;
+    background-color: var(--cyan);
+    color: var(--darkGray);
+    font-weight: 700;
+    padding: 1.5vh;
+  }
+  .dark {
+    background-color: white;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 <template>
-   <article id="contact" class="title">
+   <article id="contact" class="title contact-container">
       <h2>
          Contact details
       </h2>

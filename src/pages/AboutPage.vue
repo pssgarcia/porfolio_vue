@@ -31,14 +31,14 @@
                <i class="fa-brands fa-react" style="color: #3f90ab;"></i>
             </span>
             <h3>React</h3>
-            <p>I can create modern and advanced websites using React</p>
+            <p>I can create modern and advanced websites using React, a popular and scalable technology</p>
          </aside>
          <aside>
             <span class="span-icon">
                <img src="../assets/img/jQuery.png" alt="jQuery">
             </span>
             <h3>jQuery</h3>
-            <p>I also use jQuery. I find it very useful and easy to use. I can write cleaner code with it</p>
+            <p>I also use jQuery. I find it very useful and easy to use once I can write cleaner code with it</p>
          </aside>
          <aside>
             <span class="span-icon">

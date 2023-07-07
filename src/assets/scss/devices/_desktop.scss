@@ -1,0 +1,156 @@
+@media (min-width: 1000px) {
+  
+   header {
+      justify-content: center;
+   }
+   .pedro-group {
+      > a {
+         height: 6vh;
+         width: 6.2vh;
+         > i {
+            font-size: 30px;
+         }
+      }
+   }
+
+   nav {
+      width: 80%;
+   }
+
+   .nav-list {
+      column-gap: 8vh;
+      > li {
+         font-size: 26px;
+      }
+   }
+
+   .intro-container {
+      width: 90%;
+      justify-content: space-between;
+      padding-top: 7%;
+   }
+   .code-img {
+      height: 65vh;
+      width: 65%;
+   }
+   #intro {
+      padding-top: 8vh;
+      > h1 {
+         font-size: 50px;
+      }
+      > h3 {
+         width: 100%;
+         font-weight: 400;
+         font-size: 30px;
+      }
+      > span {
+         padding-top: 15%;
+      }
+      .resume-link {
+         padding: 2vh;
+      }
+   }
+
+   .project-card{
+      width: 27%;
+      > figcaption {
+         height: 18vh;
+         font-size: 20px;
+      }
+      > img {
+         height: 45vh;
+      }
+   }
+   
+   .project-title {
+      padding-top: 8vh;
+      > section {
+         width: 98%;
+         > input {
+            width: 25%;
+            padding: 2.5vh;
+         }
+      }
+      > h2 {
+         font-size: 45px;
+      }
+
+   }
+   
+   .card-group {
+      gap: 9vh;
+      width: 100%;
+   }
+
+   .border {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      > h6 {
+         border: 1px solid var(--azure);
+         width: 89%;
+      }
+   }
+
+   select {
+      width: 15%;
+   }
+
+   #about, #contact {
+      padding-top: 6%;
+   }
+
+   .about-figure {
+      flex-direction: row;
+      column-gap: 5vh;
+      width: 90%;
+   }
+
+   .language-group {
+      gap: 7vh;
+      > aside {
+         height: 35vh;
+         width: 30%;
+      }
+      > h2 {
+         font-size: 38px;
+      }
+   }
+
+   .skills {
+      > ul {
+         gap: 7vh;
+         > li {
+            width: 43%;
+            height: 12vh;
+            font-size: 2.1rem;
+         }
+      }
+      > h2 {
+         font-size: 45px;
+      }
+   }
+
+   #contact {
+      > ul {
+         padding-bottom: 4vh;
+      }
+   }
+
+   .icon-detail:nth-child(2) {
+      padding-right: 5.5%;
+   }
+
+   .contact-form {
+      width: 50%;
+      padding: 3%;
+      border-radius: 14px;
+   }
+
+   [type="submit"] {
+      cursor: pointer;
+      &:hover {
+         background-color: var(--lightCyan);
+      }
+   }
+}

@@ -84,6 +84,7 @@
          font-size: 20px;
          font-weight: 300; 
          text-align: center;
+         color: var(--bone);
       }
       > span {
          display: flex;
@@ -92,6 +93,12 @@
          width: 100%;
       }
    }
+   .intro-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10vh;
+   }
+
    .resume-link {
       display: flex;
       justify-content: center;
@@ -389,5 +396,7 @@
          padding: 1.5vh;
       }
    }
-
+   .dark {
+      background-color: white;
+   }
 }
