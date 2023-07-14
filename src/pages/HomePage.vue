@@ -14,6 +14,7 @@
          <select v-model="selectedCategory" @change="getProductsList">
             <option value="all">All Projects</option>
             <option value="Web Application">Web Application</option>
+            <option value="E-commerce">E-commerce</option>
             <option value="Demo">Demo</option>
             <option value="Animation">Animation</option>
          </select>
@@ -80,6 +81,13 @@ export default {
                img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFaTw1BjQJtTZ32fU-Jfic37XImS9Kzs32og&usqp=CAU',
                link: '',
                srcCode: 'https://github.com/pssgarcia/mario_kart_animations'
+            },
+            {
+               title: 'Street Kicks',
+               category: 'E-commerce',
+               img: 'https://sothebys-com.brightspotcdn.com/3a/3d/1f286f6841e2bf0d90402eb9bbc1/063022-mfm-sneakers-084.jpg',
+               link: '',
+               srcCode: 'https://github.com/pssgarcia/sneakers'
             }
          ],
          userInput: '',
