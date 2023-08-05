@@ -1,4 +1,14 @@
 @media (min-width: 200px) {
+   .light-theme {
+      background-color: var(--azure);
+      color: var(--darkGray); 
+   }
+
+   .dark-theme {
+      background-color: var(--darkGray);
+      color: var(--azure);
+   }
+
    header {
       display: flex;
       justify-content: space-between;

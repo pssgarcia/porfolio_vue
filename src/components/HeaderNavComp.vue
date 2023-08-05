@@ -1,5 +1,5 @@
 <template>
-   <header id="header">
+   <header :class="{ 'light-theme': !isDark, 'dark-theme': isDark}" id="header">
       <section class="pedro-group">
          <router-link to="/">
             <i class="fa-sharp fa-regular fa-p"></i>
@@ -33,36 +33,30 @@
             </li>
          </ul>
       </nav>
-      <!-- Dark mode will be implemented in the future -->
-      <!-- <div class="dark-toggle">
-         <input type="checkbox" v-model="isDark">
-      </div> -->
+      <!-- 
+      <span class="theme">Theme</span> 
+      <input type="checkbox" @click="toggleDark()"> -->
    </header>
-   <span class="border"><h6></h6></span> 
-   <main>
-      <router-view />
-      <a class="back-to-top" href="#header">
-         <i class="fa-solid fa-chevron-up"></i>
-      </a>
-   </main>
-   <span class="border"><h6></h6></span>  
-   <FooterComp />
 </template>
 
 <script>
-// import { useDark } from '@vueuse/core'
-import FooterComp from '@/components/FooterComp.vue'
+import { useDark, useToggle } from '@vueuse/core'
+
 
 export default {
    name: 'HeaderComp',
    components: {
-      FooterComp
+
    },
-   // setup() {
-   //    const isDark = useDark()
-   //    return {
-   //       isDark
-   //    }
-   // }
+   setup() {
+      // const isDark = useDark();
+      const isDark = useDark();
+      const toggleDark = useToggle(isDark);
+
+      return {
+         isDark,
+         toggleDark
+      };
+   }
 }
 </script>
