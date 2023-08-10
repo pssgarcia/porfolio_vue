@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section id="header">
 		<HeaderNavComp />
 	</section>
   <span class="border"><h6></h6></span> 

@@ -1,5 +1,5 @@
 <template>
-   <header :class="{ 'light-theme': !isDark, 'dark-theme': isDark}" id="header">
+   <header>
       <section class="pedro-group">
          <router-link to="/">
             <i class="fa-sharp fa-regular fa-p"></i>
@@ -40,23 +40,7 @@
 </template>
 
 <script>
-import { useDark, useToggle } from '@vueuse/core'
-
-
 export default {
-   name: 'HeaderComp',
-   components: {
-
-   },
-   setup() {
-      // const isDark = useDark();
-      const isDark = useDark();
-      const toggleDark = useToggle(isDark);
-
-      return {
-         isDark,
-         toggleDark
-      };
-   }
+   name: 'HeaderComp'
 }
 </script>
