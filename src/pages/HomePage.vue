@@ -58,14 +58,14 @@ export default {
                title: 'Expense Tracker',
                category: 'Web Application',
                img: 'https://images.pexels.com/photos/4386335/pexels-photo-4386335.jpeg?auto=compress&cs=tinysrgb&w=600',
-               link: '',
+               link: 'https://pedro-expense-tracker.netlify.app',
                srcCode: 'https://github.com/pssgarcia/expense_tracker'
             },
             {
                title: 'Employee Management System',
                category: 'Demo',
                img: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600',
-               link: '',
+               link: 'https://pedro-employee-data.netlify.app',
                srcCode: 'https://github.com/pssgarcia/employee_table_vue'
             },
             {
@@ -93,7 +93,7 @@ export default {
                title: 'Street Kicks',
                category: 'E-commerce',
                img: 'https://sothebys-com.brightspotcdn.com/3a/3d/1f286f6841e2bf0d90402eb9bbc1/063022-mfm-sneakers-084.jpg',
-               link: '',
+               link: 'https://main--pedro-sneakers.netlify.app',
                srcCode: 'https://github.com/pssgarcia/sneakers'
             }
          ],
