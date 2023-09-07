@@ -55,6 +55,13 @@ export default {
                srcCode: 'https://github.com/DYagmur/ReadVice'
             },
             {
+               title: 'Expense Tracker',
+               category: 'Web Application',
+               img: 'https://images.pexels.com/photos/4386335/pexels-photo-4386335.jpeg?auto=compress&cs=tinysrgb&w=600',
+               link: '',
+               srcCode: 'https://github.com/pssgarcia/expense_tracker'
+            },
+            {
                title: 'Employee Management System',
                category: 'Demo',
                img: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600',

@@ -15,6 +15,10 @@
   font-family: var(--fontFamily);
 }
 
+#app {
+  background-color: var(--darkGray);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -32,7 +36,6 @@ h1, h2, h3 {
 }
 
 main {
-  background-color: var(--darkGray);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,12 +147,18 @@ p {
     font-size: 20px;
     font-weight: 300;
     text-align: center;
+    color: var(--bone);
   }
   .intro-group > span {
     display: flex;
     justify-content: center;
     padding-top: 7%;
     width: 100%;
+  }
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10vh;
   }
   .resume-link {
     display: flex;
@@ -206,25 +215,11 @@ p {
     align-items: center;
     row-gap: 7vh;
   }
-  .project-card {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1vh;
-    align-items: center;
-    border-radius: 17px;
-    width: 92%;
-    background-color: var(--lightCyan);
-  }
-  .project-card > img {
-    width: 100%;
-    height: 40vh;
-    border-radius: 17px 17px 0 0;
-  }
   .project-card > figcaption {
     display: flex;
     flex-direction: column;
-    row-gap: 6px;
     align-items: center;
+    row-gap: 6px;
     padding: 2vh;
   }
   .project-card > figcaption > h3 {
@@ -242,6 +237,20 @@ p {
     text-shadow: 1px 1px var(--azure);
     font-weight: 700;
     letter-spacing: 1px;
+  }
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+    align-items: center;
+    border-radius: 17px;
+    width: 92%;
+    background-color: var(--lightCyan);
+  }
+  .project-card > img {
+    width: 100%;
+    height: 40vh;
+    border-radius: 17px 17px 0 0;
   }
   #about {
     row-gap: 7vh;
@@ -450,5 +459,355 @@ p {
   }
   .dark {
     background-color: white;
+  }
+}
+@media (min-width: 600px) {
+  nav > details {
+    display: none;
+  }
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    -moz-column-gap: 5vh;
+         column-gap: 5vh;
+  }
+  .nav-list > li {
+    font-size: 26px;
+  }
+  .nav-list > li > a {
+    color: var(--azure);
+  }
+  .nav-list > li > a:hover {
+    color: var(--lightCyan);
+  }
+  .pedro-group > a {
+    height: 5.3vh;
+    width: 5.5vh;
+    color: var(--cyan);
+    background-color: var(--azure);
+  }
+  .pedro-group > a > i {
+    font-size: 38px;
+    font-weight: 800;
+  }
+  .pedro-group > h2 {
+    font-size: 30px;
+  }
+  .intro-group > h1 {
+    text-align: left;
+    width: 100%;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+  .intro-group > h3 {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  .intro-group > span {
+    justify-content: start;
+    padding-top: 10%;
+  }
+  .resume-link {
+    font-size: 22px;
+    width: 60%;
+    padding: 1.2vh;
+    transition: 0.5s;
+  }
+  .resume-link:hover {
+    background-color: var(--azure);
+    color: var(--cyan);
+  }
+  #intro {
+    padding-top: unset;
+  }
+  .intro-container {
+    flex-direction: row;
+    -moz-column-gap: 5vh;
+         column-gap: 5vh;
+    align-items: center;
+    justify-content: center;
+    padding-top: 9%;
+  }
+  .code-img {
+    width: 55%;
+    height: 30vh;
+  }
+  .code-img > img {
+    border-radius: 20px;
+    height: 100%;
+  }
+  .project-title {
+    width: 92%;
+  }
+  .project-title > h2 {
+    font-size: 40px;
+  }
+  .project-title > p {
+    font-size: 25px;
+  }
+  .project-title > section {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .project-title > section > input {
+    width: 37%;
+  }
+  select {
+    width: 25%;
+    font-size: 17px;
+  }
+  ::-moz-placeholder {
+    font-size: 16px;
+  }
+  ::placeholder {
+    font-size: 16px;
+  }
+  .card-group {
+    flex-direction: row;
+    justify-content: center;
+    -moz-column-gap: 4vh;
+         column-gap: 4vh;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .project-card {
+    width: 43%;
+    row-gap: unset;
+  }
+  .project-card > img {
+    height: 25vh;
+  }
+  .project-card > figcaption {
+    font-size: 17px;
+    padding: unset;
+    height: 10vh;
+    justify-content: center;
+  }
+  .project-card > figcaption > h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .about-figure > figcaption {
+    font-size: 27px;
+  }
+  .language-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3vh;
+  }
+  .language-group > aside {
+    width: 40%;
+    height: 24vh;
+    font-size: 20px;
+  }
+  .language-group > aside > h3 {
+    font-size: 27px;
+  }
+  .language-group > h2 {
+    font-size: 35px;
+    width: 80%;
+    padding-bottom: 1.5rem;
+  }
+  .language-group .span-icon > i {
+    font-size: 60px;
+  }
+  .skills > h2 {
+    font-size: 40px;
+  }
+  .skills > ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    -moz-column-gap: 3vh;
+         column-gap: 3vh;
+  }
+  .skills > ul > li {
+    width: 45%;
+    font-size: 1.8rem;
+  }
+  #contact > h2 {
+    text-align: center;
+    font-size: 37px;
+  }
+  #contact > ul {
+    align-items: center;
+  }
+  .icon-detail > address {
+    font-size: 24px;
+    width: 100%;
+  }
+  .icon-detail > a {
+    font-size: 24px;
+  }
+  .icon-detail:nth-child(2) {
+    padding-left: 10%;
+  }
+  .icon-detail:last-child {
+    padding-right: 2%;
+  }
+  .contact-form {
+    width: 65%;
+  }
+  .contact-form > h3 {
+    font-size: 35px;
+  }
+  .contact-form > label {
+    font-size: 1.5rem;
+  }
+  .contact-form .submit-button > input {
+    font-size: 26px;
+  }
+  .contact-icon {
+    font-size: 26px;
+  }
+  footer {
+    height: 32vh;
+  }
+  footer > section > h2 {
+    font-size: 45px;
+  }
+  footer .fa-brands {
+    font-size: 40px;
+  }
+  footer > article {
+    display: flex;
+    -moz-column-gap: 2vh;
+         column-gap: 2vh;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  header {
+    justify-content: center;
+  }
+  .pedro-group > a {
+    height: 6vh;
+    width: 6.2vh;
+  }
+  .pedro-group > a > i {
+    font-size: 30px;
+  }
+  nav {
+    width: 80%;
+  }
+  .nav-list {
+    -moz-column-gap: 8vh;
+         column-gap: 8vh;
+  }
+  .nav-list > li {
+    font-size: 26px;
+  }
+  .intro-container {
+    width: 90%;
+    justify-content: space-between;
+    padding-top: 7%;
+  }
+  .code-img {
+    height: 65vh;
+    width: 65%;
+  }
+  #intro {
+    padding-top: 8vh;
+  }
+  #intro > h1 {
+    font-size: 50px;
+  }
+  #intro > h3 {
+    width: 100%;
+    font-weight: 400;
+    font-size: 30px;
+  }
+  #intro > span {
+    padding-top: 15%;
+  }
+  #intro .resume-link {
+    padding: 2vh;
+  }
+  .project-card {
+    width: 27%;
+  }
+  .project-card > figcaption {
+    height: 18vh;
+    font-size: 20px;
+  }
+  .project-card > img {
+    height: 45vh;
+  }
+  .project-title {
+    padding-top: 8vh;
+  }
+  .project-title > section {
+    width: 98%;
+  }
+  .project-title > section > input {
+    width: 25%;
+    padding: 2.5vh;
+  }
+  .project-title > h2 {
+    font-size: 45px;
+  }
+  .card-group {
+    gap: 9vh;
+    width: 100%;
+  }
+  .border {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .border > h6 {
+    border: 1px solid var(--azure);
+    width: 89%;
+  }
+  select {
+    width: 15%;
+  }
+  #about, #contact {
+    padding-top: 6%;
+  }
+  .about-figure {
+    flex-direction: row;
+    -moz-column-gap: 5vh;
+         column-gap: 5vh;
+    width: 90%;
+  }
+  .language-group {
+    gap: 7vh;
+  }
+  .language-group > aside {
+    height: 35vh;
+    width: 30%;
+  }
+  .language-group > h2 {
+    font-size: 38px;
+  }
+  .skills > ul {
+    gap: 7vh;
+  }
+  .skills > ul > li {
+    width: 43%;
+    height: 12vh;
+    font-size: 2.1rem;
+  }
+  .skills > h2 {
+    font-size: 45px;
+  }
+  #contact > ul {
+    padding-bottom: 4vh;
+  }
+  .icon-detail:nth-child(2) {
+    padding-right: 5.5%;
+  }
+  .contact-form {
+    width: 50%;
+    padding: 3%;
+    border-radius: 14px;
+  }
+  [type=submit] {
+    cursor: pointer;
+  }
+  [type=submit]:hover {
+    background-color: var(--lightCyan);
   }
 }/*# sourceMappingURL=style.css.map */
