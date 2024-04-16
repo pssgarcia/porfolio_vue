@@ -18,11 +18,6 @@
                   <i class="fa-brands fa-instagram social"></i>
                </a>
             </li>
-            <li>
-               <a href="https://twitter.com/pedrossgarcia_" target="_blank">
-                  <i class="fa-brands fa-twitter social"></i>
-               </a>
-            </li>
          </ul>
       </section>
       <article>
