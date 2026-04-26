@@ -4,16 +4,22 @@
          <img src="../assets/img/my-pic.jpg" alt="my-pic">
          <figcaption>
             <p>
-               My name is Pedro Soares, I am an aspiring front-end developer. Recently graduated from Tamwood College, I have a passion for web development and love to create responsive websites and applications. 
+               I’m Pedro Soares, a full-stack developer with a strong focus on backend development.
             </p>
             <p>
-               I feel comfortable working with JavaScript, Vue, React, jQuery, PHP, MySQL, MongoDb, HTML, CSS & SASS and a bit of Node.js but I'm always looking forward to learn new technologies and improve my skills.
+               I develop scalable web applications end-to-end, using JavaScript, Vue, and React on the frontend, and PHP (Laravel) with MySQL on the backend.
             </p>
             <p>
-               Aside from work, I'm a big fan of football, music and gym. Also, I'm a very easy going person and I love to meet new people and make new friends. 
+               My work is centered around designing APIs, managing data flow, and building systems that are reliable, efficient, and built to scale — not just interfaces that look good.
             </p>
             <p>
-               Additionally, I'm a fast learner and I'm always seeking new challenges and opportunities to grow as a developer. I am currently looking for a job opportunity that will allow me to apply my skills and knowledge as a developer.
+               Currently pursuing a Bachelor's degree in Software Engineering, I focus on performance, scalability, and writing clean, maintainable code that solves real problems.
+            </p>
+            <p>
+               Outside of tech, I’m into fitness, music, and fashion. I value consistency, challenges, and continuous growth.
+            </p>  
+            <p>
+               I’m currently looking for opportunities where I can contribute, grow, and deliver real impact as a full-stack developer.
             </p>
          </figcaption>
       </figure>
