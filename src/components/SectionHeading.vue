@@ -6,37 +6,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="section-heading">
-    <h2 class="section-heading__title">{{ title }}</h2>
-    <p v-if="subtitle" class="section-heading__subtitle">{{ subtitle }}</p>
-    <div class="section-heading__line"></div>
+  <div class="text-center mb-16 md:mb-24">
+    <h2 class="text-[clamp(2rem,1.5rem+2.5vw,3rem)] font-extrabold mb-2 text-text-heading">{{ title }}</h2>
+    <p v-if="subtitle" class="text-text-secondary text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] max-w-[500px] mx-auto">{{ subtitle }}</p>
+    <div class="w-[60px] h-[3px] bg-gradient-to-r from-accent to-accent-light rounded-full mt-6 mx-auto"></div>
   </div>
 </template>
-
-<style scoped>
-.section-heading {
-  text-align: center;
-  margin-bottom: var(--space-3xl);
-}
-
-.section-heading__title {
-  font-size: var(--font-size-3xl);
-  font-weight: 800;
-  margin-bottom: var(--space-sm);
-}
-
-.section-heading__subtitle {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-lg);
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.section-heading__line {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
-  border-radius: var(--radius-full);
-  margin: var(--space-lg) auto 0;
-}
-</style>

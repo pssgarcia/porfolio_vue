@@ -9,19 +9,20 @@ defineProps({
 </script>
 
 <template>
-  <article class="project-card glass-card">
-    <div class="project-card__content">
-      <div class="project-card__header">
-        <svg class="project-card__folder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+  <article class="p-8 flex flex-col transition-all duration-250 relative overflow-hidden glass-card group hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_8px_30px_rgba(168,85,247,0.1)]">
+    <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity duration-250 group-hover:opacity-100"></div>
+    <div class="flex-1 flex flex-col">
+      <div class="flex justify-between items-center mb-8">
+        <svg class="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
         </svg>
-        <div class="project-card__links">
+        <div class="flex gap-4">
           <a
             v-if="github"
             :href="github"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card__link"
+            class="text-text-muted transition-colors duration-150 flex items-center hover:text-accent-light"
             aria-label="View source code on GitHub"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -33,7 +34,7 @@ defineProps({
             :href="demo"
             target="_blank"
             rel="noopener noreferrer"
-            class="project-card__link"
+            class="text-text-muted transition-colors duration-150 flex items-center hover:text-accent-light"
             aria-label="View live demo"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
@@ -43,121 +44,14 @@ defineProps({
         </div>
       </div>
 
-      <h3 class="project-card__title">{{ title }}</h3>
-      <p class="project-card__description">{{ description }}</p>
+      <h3 class="text-[clamp(1.125rem,1rem+0.625vw,1.25rem)] font-bold mb-2 text-text-heading transition-colors duration-150 group-hover:text-accent-light">{{ title }}</h3>
+      <p class="text-text-secondary text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] leading-relaxed flex-1 mb-8">{{ description }}</p>
 
-      <div class="project-card__techs">
-        <span v-for="tech in techs" :key="tech" class="project-card__tech">
+      <div class="flex flex-wrap gap-2 mt-auto">
+        <span v-for="tech in techs" :key="tech" class="text-[clamp(0.75rem,0.7rem+0.25vw,0.875rem)] text-accent-light font-medium font-mono before:content-['#'] before:opacity-60">
           {{ tech }}
         </span>
       </div>
     </div>
   </article>
 </template>
-
-<style scoped>
-.project-card {
-  padding: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(168, 85, 247, 0.3);
-  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.1);
-}
-
-.project-card:hover::before {
-  opacity: 1;
-}
-
-.project-card__content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-xl);
-}
-
-.project-card__folder-icon {
-  width: 40px;
-  height: 40px;
-  color: var(--color-accent);
-}
-
-.project-card__links {
-  display: flex;
-  gap: var(--space-md);
-}
-
-.project-card__link {
-  color: var(--color-text-muted);
-  transition: color var(--transition-fast);
-  display: flex;
-  align-items: center;
-}
-
-.project-card__link:hover {
-  color: var(--color-accent-light);
-}
-
-.project-card__title {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
-  color: var(--color-text-heading);
-  transition: color var(--transition-fast);
-}
-
-.project-card:hover .project-card__title {
-  color: var(--color-accent-light);
-}
-
-.project-card__description {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  line-height: 1.7;
-  flex: 1;
-  margin-bottom: var(--space-xl);
-}
-
-.project-card__techs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-top: auto;
-}
-
-.project-card__tech {
-  font-size: var(--font-size-xs);
-  color: var(--color-accent-light);
-  font-weight: 500;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-}
-
-.project-card__tech::before {
-  content: '#';
-  opacity: 0.6;
-}
-</style>

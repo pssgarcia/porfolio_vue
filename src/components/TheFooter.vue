@@ -9,71 +9,25 @@ const socialLinks = [
 </script>
 
 <template>
-  <footer class="footer">
-    <div class="footer__inner container">
-      <div class="footer__links">
+  <footer class="border-t border-border-subtle py-12 relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[200px] h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+    <div class="w-full max-w-[1200px] mx-auto px-4 md:px-12 flex flex-col items-center gap-6">
+      <div class="flex gap-8">
         <a
           v-for="link in socialLinks"
           :key="link.label"
           :href="link.href"
           target="_blank"
           rel="noopener noreferrer"
-          class="footer__link"
+          class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] text-text-secondary font-medium transition-colors duration-150 hover:text-accent-light"
         >
           {{ link.label }}
         </a>
       </div>
-      <p class="footer__copyright">
+      <p class="text-[clamp(0.75rem,0.7rem+0.25vw,0.875rem)] text-text-muted">
         © {{ currentYear }} Pedro Soares. Built with
-        <span class="accent">Vue.js</span>
+        <span class="text-accent">Vue.js</span>
       </p>
     </div>
   </footer>
 </template>
-
-<style scoped>
-.footer {
-  border-top: 1px solid var(--color-border-subtle);
-  padding: var(--space-2xl) 0;
-  position: relative;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-}
-
-.footer__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-lg);
-}
-
-.footer__links {
-  display: flex;
-  gap: var(--space-xl);
-}
-
-.footer__link {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  font-weight: 500;
-  transition: color var(--transition-fast);
-}
-
-.footer__link:hover {
-  color: var(--color-accent-light);
-}
-
-.footer__copyright {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-}
-</style>

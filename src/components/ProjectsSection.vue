@@ -8,12 +8,12 @@ const { targetRef, isVisible } = useIntersectionObserver()
 </script>
 
 <template>
-  <section id="projects" class="section projects">
+  <section id="projects" class="section">
     <div class="container">
-      <div ref="targetRef" :class="['projects__wrapper', { 'is-visible': isVisible }]">
+      <div ref="targetRef" class="transition-all duration-600 ease-out" :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'">
         <SectionHeading title="Projects" subtitle="Some things I've built" />
 
-        <div class="projects__grid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <ProjectCard
             v-for="(project, index) in projects"
             :key="project.title"
@@ -23,52 +23,11 @@ const { targetRef, isVisible } = useIntersectionObserver()
             :github="project.github"
             :demo="project.demo"
             :style="{ transitionDelay: `${index * 100}ms` }"
-            class="projects__card"
+            class="transition-all duration-500 ease-out"
+            :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'"
           />
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.projects__wrapper {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.projects__wrapper.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.projects__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
-}
-
-@media (min-width: 640px) {
-  .projects__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .projects__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.projects__card {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.projects__wrapper.is-visible .projects__card {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>

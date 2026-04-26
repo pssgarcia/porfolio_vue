@@ -29,45 +29,52 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="about" class="section about">
+  <section id="about" class="section">
     <div class="container">
-      <div ref="targetRef" :class="['about__wrapper', { 'is-visible': isVisible }]">
+      <div ref="targetRef" class="transition-all duration-600 ease-out" :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'">
         <SectionHeading title="About Me" subtitle="A bit about who I am and what I do" />
 
-        <div class="about__content">
-          <div class="about__text">
-            <p>
+        <div class="max-w-[700px] mx-auto mb-16">
+          <div class="space-y-6">
+            <p class="text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] leading-[1.8]">
+              My journey began in <span class="text-accent">Vancouver, Canada</span>, where I
+              completed an intensive web development program at Tamwood International College —
+              working with HTML, CSS, JavaScript, Node.js, React, Vue.js, PHP, and MySQL on
+              real-world team projects.
+            </p>
+            <p class="text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] leading-[1.8]">
               I'm a full-stack developer with a strong focus on backend development, based
-              in <span class="accent">Belo Horizonte, Brazil</span>. I develop scalable
+              in <span class="text-accent">Belo Horizonte, Brazil</span>. I develop scalable
               web applications end-to-end, using JavaScript, Vue, and React on the frontend,
               and PHP (Laravel) with MySQL on the backend.
             </p>
-            <p>
+            <p class="text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] leading-[1.8]">
               My work is centered around designing APIs, managing data flow, and building
-              systems that are <span class="accent">reliable, efficient, and built to scale</span>
+              systems that are <span class="text-accent">reliable, efficient, and built to scale</span>
               — not just interfaces that look good.
             </p>
-            <p>
+            <p class="text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] leading-[1.8]">
               Currently pursuing a Bachelor's degree in Software Engineering at PUC Minas,
               I focus on performance, scalability, and writing clean, maintainable code
               that solves real problems.
             </p>
-            <p>
+            <p class="text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] leading-[1.8]">
               Outside of tech, I'm into fitness, music, and fashion. I value consistency,
               challenges, and continuous growth.
             </p>
           </div>
         </div>
 
-        <div class="about__skills" ref="skillsContainerRef">
-          <h3 class="about__skills-title">Technologies I work with</h3>
-          <div :class="['about__skills-grid stagger-children', { 'skills-visible': skillsVisible }]">
+        <div class="text-center" ref="skillsContainerRef">
+          <h3 class="text-[clamp(1.125rem,1rem+0.625vw,1.25rem)] font-semibold mb-8 text-text-heading">Technologies I work with</h3>
+          <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-[750px] mx-auto stagger-children">
             <SkillBadge
               v-for="skill in skills"
               :key="skill.name"
               :name="skill.name"
               :icon="skill.icon"
-              :class="{ 'is-visible': skillsVisible }"
+              class="transition-all duration-500 ease-out"
+              :class="skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[20px]'"
             />
           </div>
         </div>
@@ -75,52 +82,3 @@ onMounted(() => {
     </div>
   </section>
 </template>
-
-<style scoped>
-.about__wrapper {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.about__wrapper.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.about__content {
-  max-width: 700px;
-  margin: 0 auto var(--space-3xl);
-}
-
-.about__text p {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
-  line-height: 1.8;
-  margin-bottom: var(--space-lg);
-}
-
-.about__text p:last-child {
-  margin-bottom: 0;
-}
-
-.about__skills {
-  text-align: center;
-}
-
-.about__skills-title {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  margin-bottom: var(--space-xl);
-  color: var(--color-text-heading);
-}
-
-.about__skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-sm);
-  max-width: 600px;
-  margin: 0 auto;
-}
-</style>

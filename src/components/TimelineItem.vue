@@ -9,110 +9,20 @@ defineProps({
 </script>
 
 <template>
-  <div class="timeline-item">
-    <div class="timeline-item__dot">
-      <span class="timeline-item__dot-inner" :class="`timeline-item__dot-inner--${type}`"></span>
+  <div class="flex gap-8 relative pb-12 group">
+    <div class="shrink-0 flex items-start justify-center pt-8 relative z-10">
+      <span class="w-[14px] h-[14px] rounded-full border-[3px] bg-bg transition-all duration-250 group-hover:bg-accent group-hover:shadow-glow"
+            :class="type === 'education' ? 'border-accent-light' : 'border-accent'"></span>
     </div>
-    <div class="timeline-item__card glass-card">
-      <span class="timeline-item__date">{{ date }}</span>
-      <h3 class="timeline-item__title">{{ title }}</h3>
-      <p class="timeline-item__subtitle">{{ subtitle }}</p>
-      <p v-if="description" class="timeline-item__description">{{ description }}</p>
-      <span class="timeline-item__type-badge" :class="`timeline-item__type-badge--${type}`">
+    <div class="flex-1 p-8 transition-all duration-250 glass-card hover:border-accent/25 hover:translate-x-1">
+      <span class="text-[clamp(0.75rem,0.7rem+0.25vw,0.875rem)] font-semibold text-accent-light uppercase tracking-[0.08em]">{{ date }}</span>
+      <h3 class="text-[clamp(1rem,0.9rem+0.5vw,1.125rem)] font-bold mt-2 text-text-heading">{{ title }}</h3>
+      <p class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] text-text-secondary mt-1">{{ subtitle }}</p>
+      <p v-if="description" class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] text-text-muted leading-relaxed mt-4">{{ description }}</p>
+      <span class="inline-block mt-4 text-[clamp(0.75rem,0.7rem+0.25vw,0.875rem)] px-3 py-1 rounded-full font-medium"
+            :class="type === 'education' ? 'bg-[#7c3aed]/10 text-[#c4b5fd]' : 'bg-accent-muted text-accent-light'">
         {{ type === 'work' ? '💼 Work' : '🎓 Education' }}
       </span>
     </div>
   </div>
 </template>
-
-<style scoped>
-.timeline-item {
-  display: flex;
-  gap: var(--space-xl);
-  position: relative;
-  padding-bottom: var(--space-2xl);
-}
-
-.timeline-item__dot {
-  flex-shrink: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: var(--space-xl);
-  position: relative;
-  z-index: 2;
-}
-
-.timeline-item__dot-inner {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 3px solid var(--color-accent);
-  background: var(--color-bg);
-  transition: all var(--transition-base);
-}
-
-.timeline-item__dot-inner--education {
-  border-color: var(--color-accent-light);
-}
-
-.timeline-item:hover .timeline-item__dot-inner {
-  background: var(--color-accent);
-  box-shadow: 0 0 12px var(--color-accent-glow);
-}
-
-.timeline-item__card {
-  flex: 1;
-  padding: var(--space-xl);
-  transition: all var(--transition-base);
-}
-
-.timeline-item__card:hover {
-  border-color: rgba(168, 85, 247, 0.25);
-  transform: translateX(4px);
-}
-
-.timeline-item__date {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--color-accent-light);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.timeline-item__title {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  margin-top: var(--space-sm);
-  color: var(--color-text-heading);
-}
-
-.timeline-item__subtitle {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin-top: var(--space-xs);
-}
-
-.timeline-item__description {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  margin-top: var(--space-md);
-}
-
-.timeline-item__type-badge {
-  display: inline-block;
-  margin-top: var(--space-md);
-  font-size: var(--font-size-xs);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-  background: var(--color-accent-muted);
-  color: var(--color-accent-light);
-  font-weight: 500;
-}
-
-.timeline-item__type-badge--education {
-  background: rgba(124, 58, 237, 0.1);
-  color: #c4b5fd;
-}
-</style>

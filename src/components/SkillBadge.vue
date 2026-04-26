@@ -6,41 +6,8 @@ defineProps({
 </script>
 
 <template>
-  <span class="skill-badge animate-on-scroll">
-    <span class="skill-badge__icon">{{ icon }}</span>
-    <span class="skill-badge__name">{{ name }}</span>
+  <span class="inline-flex items-center gap-2.5 px-5 py-2.5 bg-surface border border-border-subtle rounded-full text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] font-medium text-text-primary transition-all duration-250 cursor-default hover:border-accent hover:bg-accent-muted hover:-translate-y-0.5 hover:shadow-glow-sm">
+    <span class="text-[1.2em] leading-none">{{ icon }}</span>
+    <span class="whitespace-nowrap">{{ name }}</span>
   </span>
 </template>
-
-<style scoped>
-.skill-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: 0.5rem 1rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  color: var(--color-text);
-  transition: all var(--transition-base);
-  cursor: default;
-}
-
-.skill-badge:hover {
-  border-color: var(--color-accent);
-  background: var(--color-accent-muted);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-sm);
-}
-
-.skill-badge__icon {
-  font-size: 1.1em;
-  line-height: 1;
-}
-
-.skill-badge__name {
-  white-space: nowrap;
-}
-</style>

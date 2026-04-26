@@ -53,26 +53,26 @@ const socialLinks = [
 </script>
 
 <template>
-  <section id="contact" class="section contact">
+  <section id="contact" class="section">
     <div class="container">
-      <div ref="targetRef" :class="['contact__wrapper', { 'is-visible': isVisible }]">
+      <div ref="targetRef" class="transition-all duration-600 ease-out" :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'">
         <SectionHeading title="Get In Touch" subtitle="Let's work together" />
 
-        <div class="contact__grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-[900px] mx-auto md:items-start">
           <!-- Info side -->
-          <div class="contact__info">
-            <p class="contact__info-text">
+          <div class="flex flex-col gap-8">
+            <p class="text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] leading-[1.8]">
               I'm currently looking for new opportunities where I can contribute,
               grow, and deliver real impact. Feel free to reach out!
             </p>
-            <div class="contact__socials">
+            <div class="flex flex-col gap-4">
               <a
                 v-for="link in socialLinks"
                 :key="link.label"
                 :href="link.href"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="contact__social-link"
+                class="inline-flex items-center gap-4 text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] font-medium transition-all duration-150 w-fit hover:text-accent-light hover:translate-x-1"
               >
                 <!-- GitHub -->
                 <svg v-if="link.icon === 'github'" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
@@ -89,7 +89,7 @@ const socialLinks = [
                 <span>{{ link.label }}</span>
               </a>
             </div>
-            <div class="contact__location">
+            <div class="flex items-center gap-2 text-text-muted text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)]">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="12" cy="10" r="3"/>
@@ -100,7 +100,7 @@ const socialLinks = [
 
           <!-- Form side -->
           <form
-            class="contact__form glass-card"
+            class="p-12 flex flex-col gap-6 glass-card"
             name="contact"
             method="POST"
             data-netlify="true"
@@ -112,8 +112,8 @@ const socialLinks = [
               <label>Don't fill this out: <input name="bot-field" /></label>
             </p>
 
-            <div class="contact__field">
-              <label for="contact-name" class="contact__label">Name</label>
+            <div class="flex flex-col gap-1">
+              <label for="contact-name" class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] font-medium text-text-secondary">Name</label>
               <input
                 id="contact-name"
                 v-model="form.name"
@@ -121,12 +121,12 @@ const socialLinks = [
                 name="name"
                 required
                 placeholder="Your name"
-                class="contact__input"
+                class="px-4 py-3 bg-surface border border-border-subtle rounded-xl text-text-primary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] transition-colors duration-150 focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-muted)] placeholder:text-text-muted"
               />
             </div>
 
-            <div class="contact__field">
-              <label for="contact-email" class="contact__label">Email</label>
+            <div class="flex flex-col gap-1">
+              <label for="contact-email" class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] font-medium text-text-secondary">Email</label>
               <input
                 id="contact-email"
                 v-model="form.email"
@@ -134,12 +134,12 @@ const socialLinks = [
                 name="email"
                 required
                 placeholder="your@email.com"
-                class="contact__input"
+                class="px-4 py-3 bg-surface border border-border-subtle rounded-xl text-text-primary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] transition-colors duration-150 focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-muted)] placeholder:text-text-muted"
               />
             </div>
 
-            <div class="contact__field">
-              <label for="contact-message" class="contact__label">Message</label>
+            <div class="flex flex-col gap-1">
+              <label for="contact-message" class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] font-medium text-text-secondary">Message</label>
               <textarea
                 id="contact-message"
                 v-model="form.message"
@@ -147,24 +147,24 @@ const socialLinks = [
                 required
                 rows="5"
                 placeholder="Your message..."
-                class="contact__input contact__textarea"
+                class="px-4 py-3 bg-surface border border-border-subtle rounded-xl text-text-primary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] transition-colors duration-150 focus:border-accent focus:shadow-[0_0_0_3px_var(--color-accent-muted)] placeholder:text-text-muted resize-y min-h-[120px]"
               ></textarea>
             </div>
 
             <button
               id="contact-submit"
               type="submit"
-              class="btn btn-primary contact__submit"
+              class="btn btn-primary w-full mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
               :disabled="isSubmitting"
             >
               <span v-if="isSubmitting">Sending...</span>
               <span v-else>Send Message</span>
             </button>
 
-            <p v-if="submitStatus === 'success'" class="contact__status contact__status--success">
+            <p v-if="submitStatus === 'success'" class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] text-center p-2 rounded-lg text-[#4ade80] bg-[rgba(74,222,128,0.1)]">
               Message sent successfully! I'll get back to you soon.
             </p>
-            <p v-if="submitStatus === 'error'" class="contact__status contact__status--error">
+            <p v-if="submitStatus === 'error'" class="text-[clamp(0.8125rem,0.75rem+0.3125vw,0.9375rem)] text-center p-2 rounded-lg text-[#f87171] bg-[rgba(248,113,113,0.1)]">
               Something went wrong. Please try emailing me directly.
             </p>
           </form>
@@ -173,122 +173,3 @@ const socialLinks = [
     </div>
   </section>
 </template>
-
-<style scoped>
-.contact__wrapper {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.contact__wrapper.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.contact__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3xl);
-  max-width: 900px;
-  margin: 0 auto;
-}
-@media (min-width: 768px) {
-  .contact__grid {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
-}
-.contact__info {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-.contact__info-text {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
-  line-height: 1.8;
-}
-.contact__socials {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-.contact__social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-md);
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  transition: all var(--transition-fast);
-  width: fit-content;
-}
-.contact__social-link:hover {
-  color: var(--color-accent-light);
-  transform: translateX(4px);
-}
-.contact__location {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
-}
-.contact__form {
-  padding: var(--space-2xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
-.contact__field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-.contact__label {
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  color: var(--color-text-secondary);
-}
-.contact__input {
-  padding: 0.75rem 1rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-md);
-  color: var(--color-text);
-  font-size: var(--font-size-base);
-  transition: border-color var(--transition-fast);
-}
-.contact__input::placeholder {
-  color: var(--color-text-muted);
-}
-.contact__input:focus {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px var(--color-accent-muted);
-}
-.contact__textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-.contact__submit {
-  width: 100%;
-  margin-top: var(--space-sm);
-}
-.contact__submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-.contact__status {
-  font-size: var(--font-size-sm);
-  text-align: center;
-  padding: var(--space-sm);
-  border-radius: var(--radius-sm);
-}
-.contact__status--success {
-  color: #4ade80;
-  background: rgba(74, 222, 128, 0.1);
-}
-.contact__status--error {
-  color: #f87171;
-  background: rgba(248, 113, 113, 0.1);
-}
-</style>
