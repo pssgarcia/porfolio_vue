@@ -9,7 +9,7 @@ import ContactSection from '@/components/ContactSection.vue'
 <template>
   <HeroSection />
   <AboutSection />
-  <ProjectsSection />
   <ExperienceSection />
+  <ProjectsSection />
   <ContactSection />
 </template>

@@ -43,7 +43,7 @@ onMounted(() => {
               real-world team projects.
             </p>
             <p class="text-text-secondary text-[clamp(0.875rem,0.8rem+0.375vw,1rem)] leading-[1.8]">
-              I'm a full-stack developer with a strong focus on backend development, based
+              I'm a full-stack developer with a strong focus on backend, based
               in <span class="text-accent">Belo Horizonte, Brazil</span>. I develop scalable
               web applications end-to-end, using JavaScript, Vue, and React on the frontend,
               and PHP (Laravel) with MySQL on the backend.
