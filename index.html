@@ -12,6 +12,14 @@
     <title>Pedro Soares — Full-Stack Developer</title>
   </head>
   <body>
+    <!-- Netlify forms workaround for Vue SPA -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
