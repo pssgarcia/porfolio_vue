@@ -9,23 +9,31 @@ const form = ref({ name: '', email: '', message: '' })
 const isSubmitting = ref(false)
 const submitStatus = ref('')
 
-async function handleSubmit() {
+const handleSubmit = async () => {
   isSubmitting.value = true
   submitStatus.value = ''
+
   try {
-    const formData = new FormData()
+    const formData = new URLSearchParams()
     formData.append('form-name', 'contact')
     formData.append('name', form.value.name)
     formData.append('email', form.value.email)
     formData.append('message', form.value.message)
 
-    await fetch('/', {
+    const response = await fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
+      body: formData.toString()
     })
-    submitStatus.value = 'success'
-    form.value = { name: '', email: '', message: '' }
+
+    if (response.ok) {
+      submitStatus.value = 'success'
+      form.value.name = ''
+      form.value.email = ''
+      form.value.message = ''
+    } else {
+      submitStatus.value = 'error'
+    }
   } catch {
     submitStatus.value = 'error'
   } finally {
