@@ -1,24 +1,29 @@
-# pedro_portfolio_vue
+# Pedro Soares — Portfolio
 
-## Project setup
-```
+A modern, dark-themed personal portfolio built with **Vue 3** + **Vite**.
+
+## Tech Stack
+
+- Vue 3 (Composition API with `<script setup>`)
+- Vue Router 4
+- Vite 6
+- Vanilla CSS with custom properties (design tokens)
+- Netlify Forms for contact
+
+## Getting Started
+
+```bash
 npm install
+npm run dev
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Build for Production
 
-### Compiles and minifies for production
-```
+```bash
 npm run build
+npm run preview
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Deploy
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Configured for **Netlify** via `netlify.toml`. Push to your connected repository and it will auto-deploy.
